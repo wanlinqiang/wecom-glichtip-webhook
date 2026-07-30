@@ -1,0 +1,18 @@
+services:
+  wecom-glichtip-webhook:
+    container_name: wecom-glichtip-webhook
+    build: .
+    restart: always
+    environment:
+      # Full webhook URL, or set GW_KEY instead
+      # Docs: https://developer.work.weixin.qq.com/document/path/99110
+      - GW_WEBHOOK_URL=https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=your-key-here
+      # - GW_KEY=your-key-here
+      # Message type: markdown (default) | news | text
+      - GW_MSGTYPE=markdown
+      # Only forward selected environments (comma-separated)
+      # - GW_ONLY_ENV=production,prod
+      # text messages: @ mobiles, or @all
+      # - GW_MENTIONED_MOBILES=@all
+    ports:
+      - "3123:3123"

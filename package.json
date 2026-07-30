@@ -1,0 +1,25 @@
+{
+  "name": "wecom-glichtip-webhook",
+  "version": "1.0.0",
+  "description": "Forward GlitchTip / Sentry webhooks to WeCom (WeChat Work) group bots",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js"
+  },
+  "keywords": [
+    "glitchtip",
+    "sentry",
+    "wecom",
+    "wechat-work",
+    "webhook",
+    "alerting"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
