@@ -58,6 +58,21 @@ http://<本服务可访问地址>:3123/webhook
 
 ## Docker
 
+镜像已发布至 Docker Hub：[nicebaiqing/wecom-glichtip-webhook](https://hub.docker.com/r/nicebaiqing/wecom-glichtip-webhook)
+
+### 直接拉取运行
+
+```bash
+docker pull nicebaiqing/wecom-glichtip-webhook:latest
+
+docker run -d --name wecom-glichtip-webhook -p 3123:3123 \
+  -e GW_WEBHOOK_URL='https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=<YOUR_KEY>' \
+  -e GW_MSGTYPE=markdown \
+  nicebaiqing/wecom-glichtip-webhook:latest
+```
+
+### 本地构建
+
 ```bash
 docker compose up -d --build
 ```
